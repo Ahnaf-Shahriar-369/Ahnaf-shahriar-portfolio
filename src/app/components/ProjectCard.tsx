@@ -70,29 +70,15 @@ export default function ProjectCard() {
           <div className="absolute top-0 right-1/4 w-px h-5 bg-gradient-to-b from-fuchsia-400/15 to-transparent z-10" />
 
           <CardContent className="relative p-3 space-y-2 z-20">
-            {/* Image Container with buttons */}
+            {/* Preview Container with iframe */}
             <div className="relative h-44 rounded-lg bg-gradient-to-br from-gray-900 via-purple-950/40 to-gray-900 border border-purple-800/40 overflow-hidden group-hover:border-purple-700/50 transition-all duration-300 shadow-inner">
-              {/* ========================================
-                  🖼️ MAIN PROJECT IMAGE GOES HERE
-                  Replace this comment with your project image:
-                  
-                  <Image
-                    src="/your-project-image.png"
-                    alt="Project Preview"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  
-                  Example:
-                  <Image
-                    src="/coinecho-dashboard.png"
-                    alt="CoinEcho Dashboard Preview"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-              ======================================== */}
+              <div className="preview-container w-full h-full overflow-hidden">
+                <iframe 
+                  src={liveUrl}
+                  className="iframe-preview"
+                  title="Project Preview"
+                />
+              </div>
 
               {/* GitHub Button */}
               <div className="absolute top-3 left-3 z-30">
@@ -105,21 +91,13 @@ export default function ProjectCard() {
                     className="w-8 h-8 rounded-full bg-gray-900/85 backdrop-blur-sm border border-purple-700/50 flex items-center justify-center hover:scale-110 hover:border-purple-600/70 transition-all duration-200 shadow-lg shadow-black/60 cursor-pointer"
                     onClick={() => handleButtonClick(githubUrl)}
                   >
-                    
-                        
-                        <Image 
-                          src="/github-mark-white.png" 
-                          alt="GitHub"
-                          width={32}
-                          height={32}
-                          className="object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-200"
-                        />
-                        
-                        
-                    
-
-                    {/* Placeholder - REMOVE when adding real image/icon */}
-                    <div className="w-4 h-4 bg-white/90 rounded-full group-hover:bg-purple-300 transition-colors duration-200" />
+                    <Image 
+                      src="/github-mark-white.png" 
+                      alt="GitHub"
+                      width={32}
+                      height={32}
+                      className="object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-200"
+                    />
 
                     <div className="absolute inset-0 rounded-full bg-purple-600/0 hover:bg-purple-600/15 transition-all duration-200" />
                   </div>
@@ -145,22 +123,6 @@ export default function ProjectCard() {
                     className="w-8 h-8 rounded-full bg-gray-900/85 backdrop-blur-sm border border-purple-700/50 flex items-center justify-center hover:scale-110 hover:border-purple-600/70 transition-all duration-200 shadow-lg shadow-black/60 cursor-pointer"
                     onClick={() => handleButtonClick(liveUrl)}
                   >
-                    {/* ========================================
-                        🔴 LIVE STATUS INDICATOR - RED DOT
-                        This is already implemented as a red dot.
-                        You can replace it with a custom icon if needed:
-                        
-                        <Image 
-                          src="/live-icon.png" 
-                          alt="Live Demo"
-                          width={12}
-                          height={12}
-                          className="object-contain"
-                        />
-                        
-                        OR keep the red dot as is (recommended)
-                    ======================================== */}
-
                     {/* Static Red Dot - Live Indicator */}
                     <div className="w-3 h-3 bg-gradient-to-br from-red-400 to-red-600 rounded-full shadow-lg shadow-red-400/40">
                       <div className="absolute inset-0.5 bg-white/20 rounded-full" />
@@ -215,73 +177,6 @@ export default function ProjectCard() {
                         className="relative w-8 h-8 rounded-full bg-gradient-to-br from-gray-900 via-purple-950/50 to-gray-900 border border-purple-700/40 flex items-center justify-center hover:scale-110 hover:border-purple-600/60 hover:z-10 transition-all duration-200 cursor-pointer backdrop-blur-sm shadow-lg shadow-black/30"
                         style={{ zIndex: 5 - i }}
                       >
-                        {/* ========================================
-                            🛠️ TECHNOLOGY ICONS GO HERE
-                            Replace this comment with your technology icons based on tech.name:
-                            
-                            {tech.name === "React" && (
-                              <Image 
-                                src="/react-icon.png" 
-                                alt="React"
-                                width={16}
-                                height={16}
-                                className="object-contain"
-                              />
-                            )}
-                            
-                            {tech.name === "Next.js" && (
-                              <Image 
-                                src="/nextjs-icon.png" 
-                                alt="Next.js"
-                                width={16}
-                                height={16}
-                                className="object-contain"
-                              />
-                            )}
-                            
-                            {tech.name === "TypeScript" && (
-                              <Image 
-                                src="/typescript-icon.png" 
-                                alt="TypeScript"
-                                width={16}
-                                height={16}
-                                className="object-contain"
-                              />
-                            )}
-                            
-                            {tech.name === "Tailwind" && (
-                              <Image 
-                                src="/tailwind-icon.png" 
-                                alt="Tailwind CSS"
-                                width={16}
-                                height={16}
-                                className="object-contain"
-                              />
-                            )}
-                            
-                            {tech.name === "Node.js" && (
-                              <Image 
-                                src="/nodejs-icon.png" 
-                                alt="Node.js"
-                                width={16}
-                                height={16}
-                                className="object-contain"
-                              />
-                            )}
-                            
-                            {tech.name === "Express.js" && (
-                              <Image 
-                                src="/express-icon.png" 
-                                alt="Express.js"
-                                width={16}
-                                height={16}
-                                className="object-contain"
-                              />
-                            )}
-                            
-                          
-                        ======================================== */}
-
                         {/* Placeholder dot - REMOVE when adding real icons */}
                         <div className="w-2 h-2 bg-purple-500/70 rounded-full group-hover:bg-purple-400 transition-colors duration-200" />
 
